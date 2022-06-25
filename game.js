@@ -10,7 +10,7 @@ function nextSequence(){
     var randomNumber = Math.floor(Math.random()*4);
     var randomChosenColour = buttonColours[randomNumber];
     gamePattern.push(randomChosenColour);
-    $("#"+randomChosenColour).fadeOut(100).fadeIn(100);
+    $("#"+randomChosenColour).fadeOut(100).fadeIn(100);//flash effect on button
     playSound(randomChosenColour);
     level++;
     $("#level-title").text("Level "+level);
@@ -93,7 +93,10 @@ $(".btn").on("click",function(event){
     // console.log(userClickedPattern);
 });
 
-$(document).on("keypress",function(){
+var mobile = (/iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(navigator.userAgent.toLowerCase()));
+var ev = mobile ? 'touchstart' : 'keypress';
+
+$(document).on(ev,function(){
     if(isAnyKeyPressed === false){
         infinityWar.pause();
         $(".btn").fadeIn();

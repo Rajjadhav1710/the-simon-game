@@ -1,0 +1,7 @@
+1)about jQuery
+2)how to load jQuery library
+3)where to load jQuery in HTML
+4)how to add flash (blink) effect on button
+5)about browser's autoplay policy(which says "autoplay is not allowed")
+6)what is minification of code
+
